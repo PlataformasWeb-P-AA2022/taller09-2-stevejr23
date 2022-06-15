@@ -18,8 +18,8 @@ admin.site.register(Jugador, JugadorAdmin)
 
 
 class EquipoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'siglas', 'usernameTwitter')
-    search_fields = ('jugador__nombre', 'equipo__nombre')
+    list_display = ('nombre', 'siglas', 'twitter')
+    search_fields = ('equipo__nombre','siglas')
 
 admin.site.register(Equipo, EquipoAdmin)
 
