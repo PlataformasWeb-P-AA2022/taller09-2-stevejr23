@@ -8,6 +8,12 @@ class Equipo(models.Model):
     siglas = models.CharField(max_length=30, blank=True)  # el campo puede 
                                                             # ser vacio
     usernameTwitter = models.CharField(max_length=30, unique=True)
+    #equipo = models.ForeignKey(Equipo, related_name='equipos', 
+     #       on_delete=models.CASCADE)
+    #campeonato = models.ForeignKey(Campeonato, related_name='campeonatos', 
+      #      on_delete=models.CASCADE)
+
+    campeonato = models.ManyToManyField(CampeonatosEquipos, through='Matricula')
     
 
     def __str__(self):
